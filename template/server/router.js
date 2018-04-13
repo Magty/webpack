@@ -1,3 +1,9 @@
+/**
+ * Created Date: Tuesday, October 31st 2017, 3:01:08 pm
+ * Author: yugasun
+ * Email: yuga.sun.bj@gmail.com
+ */
+
 const KoaRouter = require('koa-router')
 const router = new KoaRouter()
 const Mock = require('mockjs')
@@ -12,7 +18,7 @@ router.get('/', async (ctx, next) => {
   }
 })
 
-router.get('/user_info', async (ctx, next) => {
+router.get('/user/info', async (ctx, next) => {
   // make api sleep 1s
   await Sleep(1)
   ctx.body = Mock.mock(

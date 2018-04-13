@@ -12,14 +12,18 @@ import router from './router'
 {{/router}}
 import VueComponents from './plugin/VueComponents'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
-function checkStatus{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}(response) {
+function resHandleFunc{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}(response) {
   if (response.status >= 500) {
     throw new Error('Server Error'){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
   }
-  return response{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+  return response.data{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 }
 
-Vue.use(VueAxiosPlugin, { checkStatus }){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+// https://github.com/yugasun/vue-axios-plugin#options
+Vue.use(VueAxiosPlugin, {
+  baseURL: '/api',
+  resHandleFunc{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+}){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 Vue.use(VueComponents){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
 Vue.config.productionTip = false

@@ -33,9 +33,8 @@ The development server will run on port 8080 by default. If that port is already
 
 ## New Feature
 
-- [x] Add mock server
-- [x] Add Vue cookie plugin
-- [x] Add [vue-axios-plugin](https://www.npmjs.com/package/vue-axios-plugin)
+- [x] Add koajs mock server
+- [x] Add [vue-axios-plugin](https://github.com/yugasun/vue-axios-plugin)
 - [x] Add customize element-ui
 - [x] Add [ionicons](http://ionicons.com/)
 - [x] Use sass by default

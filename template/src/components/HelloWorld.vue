@@ -103,8 +103,16 @@ export default {
     async getUserInfo{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}() {
       try {
         const res = await this.$http.get(API.user_info){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+        this.$message({
+          message: '接口成功',
+          type: 'success'{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+        }){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
         this.user_info = res.data{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
       } catch (e) {
+        this.$message({
+          message: '接口请求失败',
+          type: 'error'{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+        }){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
         this.user_info = {
           username: 'yugasun',
           email: 'yuga.sun.bj@gmail.com'{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
