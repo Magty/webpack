@@ -3,7 +3,17 @@
 {{/ionicons}}
 
 /* 改变主题色变量 */
-$--color-primary: teal;
+$--color-primary: #009ee3;
+$--border-radius-base: 0px;
+$--border-radius-small: 0px;
+$--font-size-base: 12px;
+$--font-size-small: 12px;
+$--font-size-large: 14px;
+$--radio-font-size: 12px;
+$--select-input-font-size: 12px;
+$--checkbox-font-size: 12px;
+$--button-font-size: 12px;
+$--select-option-height: 32px !default;
 
 /* 改变 icon 字体路径变量，必需 */
 $--font-path: '~element-ui/lib/theme-chalk/fonts';
